@@ -1,0 +1,332 @@
+/*
+ * Ocean theme
+ */
+
+
+/*--- Typography ---*/
+
+#content {
+  min-height: 400px;
+}
+
+.columns-2 {
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+}
+
+h2, .h2 {
+  color: #fa6a02;
+}
+h3, .h3 {
+  color: #2a6496;
+}
+h4, .h4 {
+  color: #2a6496;
+}
+
+
+/*--- Navigation ---*/
+
+.navbar-ocean,
+.navbar-detail {
+  margin-bottom: 0;
+}
+
+.navbar-ocean .navbar-nav > li
+{
+  vertical-align: middle;
+  background-color: #c0e0ff;
+  text-align: center;
+  border: thin outset;
+  min-width: 6em;
+}
+.navbar-ocean .navbar-nav > li a {
+  color: black;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.navbar-ocean .navbar-nav > li:hover,
+.navbar-detail .navbar-nav > li:hover
+{
+  background-color: #fffebf;
+}
+.navbar-ocean .navbar-nav > .active,
+.navbar-detail .navbar-nav > .active
+{
+  background-color: #ffdb99;
+}
+
+.navbar-ocean .navbar-text {
+  color: #006eab;
+  font-weight: bold;
+  font-size: 2rem;
+  margin: 7px;
+}
+
+.navbar-detail .navbar-nav > li {
+  vertical-align: middle;
+  background-color: transparent;
+  text-align: center;
+  border: thin outset;
+  min-width: 10em;
+}
+.navbar-detail .navbar-nav > li a {
+  color: black;
+  font-weight: normal;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+/* Tabs */
+#tabs .nav-tabs > li > a {
+  font-size: 1.4rem;
+  color: #2a6496;
+}
+#tabs .nav-tabs > li.active > a {
+  font-weight: bold;
+  color: black;
+  /*background-color: azure;*/
+}
+#tabs .panel-body {
+  /*background-color: azure;*/
+  min-height: 350px;
+  margin-bottom: 10px;
+  border-left: 1px solid #dddddd;
+  border-right: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
+}
+
+/*--- Buttons ---*/
+
+.btn.btn-default,
+.btn.btn-primary,
+.btn.btn-success,
+.btn.btn-info,
+.btn.btn-warning,
+.btn.btn-danger {
+  border: thin outset;
+  border-radius: 0;
+  border-color: black;
+}
+.btn-default:active,
+.btn-primary:active,
+.btn-success:active,
+.btn-info:active,
+.btn-warning:active,
+.btn-danger:active,
+.btn-default.active,
+.btn-primary.active,
+.btn-success.active,
+.btn-info.active,
+.btn-warning.active,
+.btn-danger.active {
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+}
+
+.btn-default:hover,
+.btn-default:focus,
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-success:hover,
+.btn-success:focus,
+.btn-info:hover,
+.btn-info:focus,
+.btn-warning:hover,
+.btn-warning:focus,
+.btn-danger:hover,
+.btn-danger:focus
+{
+  background-color: #eeeeee;
+  color: black;
+}
+
+/* Tweak the spacing for the action buttons and task buttons */
+.btn-group-sm {
+  margin-left: 20px;
+}
+
+
+
+/*--- Forms ---*/
+form .form-control {
+  border-radius: 0;
+  background-color: #faffbd;
+}
+form .form-control:disabled {
+  background-color: azure;
+}
+form .form-group.required > label:after {
+  content:"*";
+  color:red;
+}
+
+/* Legends should look like labels */
+form .form-legend {
+  display: inline-block;
+  border: none;
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 1.3rem;
+}
+form .form-group.required fieldset > legend:after {
+    content:"*";
+    color:red;
+}
+
+
+/* autocomplete */
+.autocomplete-suggestions { border: 1px solid #999; background: #FFF; overflow: auto; }
+.autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; }
+.autocomplete-selected { background: #F0F0F0; }
+.autocomplete-suggestions strong { font-weight: normal; color: #3399FF; }
+
+
+
+/*--- Tables ---*/
+
+.table > thead > tr.info > th {
+  background-color: #C0E0FF;
+}
+
+/* Overrides for the striping */
+.table-striped > tbody > tr.bg-danger > td {
+  background-color: #f0ad4e!important;
+}
+
+.table-striped > tbody > tr.selected > td:first-child {
+  /* background-color: #d9edf7!important; */
+  background-color: #ffdb99;
+}
+
+
+/*
+ * tablesorter
+ */
+table.tablesorter .header {
+	cursor: pointer;
+}
+table.tablesorter .header:after {
+  content: "";
+  float: right;
+  margin-top: 7px;
+  border-width: 0 4px 4px;
+  border-style: solid;
+  border-color: #000000 transparent;
+  visibility: hidden;
+}
+table.tablesorter .header:hover:after {
+  visibility: visible;
+}
+table.tablesorter .headerSortDown, table.tablesorter .headerSortUp {
+  background-color: #f7f7f9;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+}
+table.tablesorter .headerSortDown:after, table.tablesorter .headerSortDown:hover:after {
+  visibility: visible;
+  filter: alpha(opacity=60);
+  -moz-opacity: 0.6;
+  opacity: 0.6;
+}
+table.tablesorter .headerSortUp:after {
+  border-bottom: none;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid #000000;
+  visibility: visible;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  filter: alpha(opacity=60);
+  -moz-opacity: 0.6;
+  opacity: 0.6;
+}
+
+
+
+
+
+/*--- Page Specific styles ---*/
+
+
+/*
+ * Centre the login box
+ */
+body#auth {
+  margin-top: 10%;
+}
+
+
+
+/* prevent the timestamps wrapping in the notes table */
+#notes-table td {
+  min-width: 130px;
+}
+
+
+/*----- Diary -----*/
+
+#appointments .page-header {
+    margin: 10px 0 0;
+}
+
+#calendar .datepicker {
+  line-height: 0.8;
+  font-size: 1.3rem;
+  border-radius: 0;
+}
+
+#calendar .datepicker table tr td,
+#calendar .datepicker table tr th {
+  height: inherit;
+  border-radius: 0;
+}
+
+/* center align all column headers in the diary, except the first column (time) */
+#diary tr th:not(:first-child) { text-align: center;}
+
+#diary table a {
+  font-weight: bold;
+  color: #006eab;
+}
+
+#diary table a:hover,
+#diary nav.nav-step a:hover
+{
+  color: red;
+}
+
+#diary nav.nav-step a {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+/*!* resource selector in weekly diary *!*/
+/*#diary .navbar-ocean .navbar-nav > li a {*/
+  /*color: black;*/
+  /*font-weight: normal;*/
+  /*padding-top: 8px;*/
+  /*padding-bottom: 8px;*/
+  /*min-width: 10em;*/
+/*}*/
+
+#diary tbody tr td:hover {
+  background-color: #ffdb99!important;
+}
+
+#diary tbody tr td a {
+  display:block;
+}
+
+/* diary bookings include !important to override the table-striping */
+td.diary-magenta {background-color: #FFCCFF !important;}
+td.diary-yellow {background-color: #FFFF99 !important;}
+td.diary-blue {background-color: #C0E0FF !important;}
+td.diary-red {background-color: #FF9999 !important;}
+td.diary-green {background-color: #DDFFDD !important;}
+
+
+
+
+

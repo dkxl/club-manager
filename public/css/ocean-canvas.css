@@ -1,0 +1,277 @@
+/* =Reset
+-------------------------------------------------------------- */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	border: 0;
+	font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
+    font-size: 13px;
+	font-style: inherit;
+	font-weight: inherit;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+html {
+	 overflow-y: scroll; /* Keeps page centred in all browsers regardless of content height */
+	-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
+ 	-ms-text-size-adjust: 100%;  /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
+}
+body {
+	background: #fff;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+nav,
+section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+table { /* tables still need 'cellspacing="0"' in the markup */
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	font-weight: normal;
+	text-align: left;
+}
+td {
+	padding:1% 2%;	
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+a:focus {
+	outline: thin dotted;
+}
+a:hover,
+a:active { /* Improves readability when focused and also mouse hovered in all browsers people.opera.com/patrickl/experiments/keyboard/test */
+	outline: 0;
+}
+a img {
+	border: 0;
+}
+
+
+/* Headings */
+
+h1
+{
+	clear: both;
+	line-height: 1.25;
+	color: #06266f;
+	font-size: 2.0rem;
+	text-align: center;
+}
+h1 small {
+  font-size: 65%;
+  font-weight: normal;
+  line-height: 1;	
+  color: #FA6A02;	
+}
+
+
+/* hide markup */
+.hidden {
+	display: none;
+}
+
+
+/* Background */
+body {
+	background-color: #ebf5ff;
+}
+
+
+/* Timetable and Bookings */
+table  {
+  table-layout: fixed; 
+  border: 2px solid #4671d5;
+  width: 100%;   
+}
+table th {
+  background-color: #4671d5; 
+  color: white;
+  border: 1px solid #fff;
+  padding: 0.5em;
+}
+table td {
+  background-color: #f2f2f9;
+  border: 1px solid #fff; 
+  font-size: 110%;
+}
+table thead th {
+     background-color:  #9E2AD4;
+     font-size: 130%;
+     text-align: center;
+}
+table thead td {
+     font-style: oblique;
+}
+table td input[type="submit"] {
+    padding: 0.5em 1em; 
+}
+
+
+/* from css-tricks.com */
+@media screen and (max-width: 500px) {
+   /* do not behave like a table */
+   table, 
+   table thead, 
+   table tbody, 
+   table th, 
+   table td, 
+   table tr {
+     display: block; 
+   }
+   
+   /* hide sub-headings */
+   table thead td {
+     position: absolute;
+     top: -9999px;
+     left: -9999px;
+   }
+   
+   table tr {
+    border-top: 2px solid #4671d5;
+   }
+   
+   table tbody td:before {
+      /* insert cells that act as table headers */
+ 
+      content: attr(data-label);
+   	  min-width: 100px;
+      float: left;
+      font-weight: bold; 
+      text-transform: uppercase;
+      padding-right: 2em;
+      white-space: nowrap;
+    }
+}
+
+
+
+
+
+
+
+
+/* Buttons, and links that look like buttons */
+/*!
+ * Bootstrap v3.0.0
+ *
+ * Copyright 2013 Twitter, Inc
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Designed and built with all the love in the world by @mdo and @fat.
+ *
+ * DKXL: Bootstrap style buttons, see getbootstrap.com for full css
+ *       - with some extra tags to specifically target <a> links 
+ *       - and tweaks to border colors
+ */
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+   margin-bottom: 4px;
+  margin-right: 4px;
+  font-weight: normal;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+       -o-user-select: none;
+          user-select: none;
+   -webkit-box-shadow: 1px 1px 0 0 rgba(0,0,0,0.4);
+      -moz-box-shadow: 1px 1px 0 0 rgba(0,0,0,0.4);
+           box-shadow: 1px 1px 0 0 rgba(0,0,0,0.4);
+}
+
+html a {
+	color: #ca3c08;
+	text-decoration: none;
+}
+
+html a.btn:visited {
+    color: #ffffff;
+}
+
+button[type=submit].btn-primary,
+input[type=submit].btn-primary,
+a.btn-primary  {
+  color: #ffffff;
+  background-color: #227A16; /*#428bca */
+  border-color: #357ebd;
+}
+button[type=submit].btn-warning,
+input[type=submit].btn-warning,
+a.btn-warning {
+  color: #ffffff;
+  background-color: #FA6A02; /*#f0ad4e */
+  border-color: #eea236;
+}
+button[type=submit].btn-danger,
+input[type=submit].btn-danger,
+a.btn-danger {
+  color: #ffffff;
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+button[type=submit].btn-success,
+input[type=submit].btn-success,
+a.btn-success {
+  color: #ffffff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+button[type=submit].btn-info,
+input[type=submit].btn-info,
+a.btn-info {
+  color: #ffffff;
+  background-color: #4671D5; 
+  border-color: #262262;
+}
+
+.btn-lg {
+  padding: 8px 12px;
+  font-size: 16px;
+  line-height: 1.33;
+  border-radius: 6px;
+}
+
+.btn-sm,
+.btn-xs {
+  padding: 5px 10px;
+  font-size: 10px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+
+.btn-xs {
+  padding: 1px 5px;
+}
+

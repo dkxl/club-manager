@@ -1,0 +1,62 @@
+/*
+ * Printable styling
+ */
+
+@media print {
+
+    @page {
+        size: A4 portrait;
+        margin: 0mm;
+    }
+
+    #branding {
+        margin-top: 2em;
+        padding: 0 1em;
+    }
+
+    .panel-heading.bg-primary {
+        font-size: 16px;
+        font-weight: bold;
+        color: #428bca !important;
+    }
+
+    .panel-heading.bg-warning {
+        font-size: 14px;
+        font-style: italic;
+        color: #428bca !important;
+    }
+
+    h1, h2, h3 {
+        color: #428bca !important;
+    }
+
+    #content .panel {
+        margin-bottom: 1em;
+        padding: 0 1em;
+        font-size: 12px;
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+
+    #content .panel-body, #content .panel-heading {
+        padding: 0;
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+    #content .panel-body {
+        margin-bottom: 1em;
+    }
+
+    span.label {
+        border: none;
+        color: #428bca !important;
+        font-size: 90%!important;
+    }
+
+    .columns-2 {
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+    }
+
+}
