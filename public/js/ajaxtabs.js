@@ -25,7 +25,7 @@ APT.tabs =  {
     // Initialise
     curTab: '',
     curId: '',
-    curController: '',  // gets populated from each tab's data-controller attribute
+    curController: '/',  // gets populated from each tab's data-controller attribute
     nestedResources: false,  // for nested resources (shallow nesting)
     parentController: '',
     parentId: '',
