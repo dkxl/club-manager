@@ -1,4 +1,4 @@
-# Club Manager
+**# Club Manager
 
 A management system for gyms and fitness clubs:
 - book appointments and events
@@ -22,12 +22,101 @@ Migrating from Laravel 5 to Laravel 11 was quite tedious. I guess I left it too 
 - The Wordpress API is not implemented in this version
 - Direct Debit management and reporting are not implemented in this version
 
-## Host Environment
+
+## Deployment
+
+You will need a working Docker environment. You also need git and composer. 
+
+For Debian, start here:
+https://docs.docker.com/engine/install/debian/
+
+On the Docker host:
+- checkout this repository to your home directory
+- use docker compose to build and run the nginx, laravel and db containers
+
+```
+cd ~
+git clone https://github.com/dkxl/club-manager.git
+cd club-manager
+docker compose -f docker/compose.yaml up -d
+```
+
+Now shell into the laravel container:
+- use composer to install laravel and dependencies
+```
+docker exec -it laravel /bin/sh
+cd /srv/app
+composer install
+```
+
+Still within the container exec:
+- copy the production .env into place
+- use Laravel Artisan scripts to create the database
+- seed with some default data 
+```
+cd /srv/app
+cp .env.example .env
+
+php artisan key:generate
+php artisan config:cache
+php artisan migrate
+php artisan db:seed --class=AdminSeeder
+php artisan db:seed --class=VenueSeeder
+```
+
+
+### Customise 
+
+- Set the server name for your nginx site by editing the hostname for the laravel container in `docker/compose.yaml`
+
+e.g.
+```
+services:
+  nginx:
+    hostname: "club-manager.example.com"
+
+...etc
+```
+- Replace `docker/server.crt` and `docker/server.key` with SSL certificate and key to match the hostname
+
+
+### Run
+```
+cd ~/club-manager/docker
+docker compose up -d
+```
+
+Use a browser to connect to your site's home page, e.g. `http://club-manager.example.com`.
+
+You will be redirected to the SSL site on port 443, and the login page will be displayed.
+
+Login as user: `admin@example.com`, password: `change_me_now`
+
+
+
+### User Administration
+An administration user account was created by the database seeder. Username and password is defined
+in `/database/seeders/AdminSeeder.php`
+
+Other application users cannot register themselves; use the admin user account to create additional
+user accounts and to set their privileges.
+
+Login as the admin user, and click on the `Admin` button to create additional user accounts and
+configure their roles, e.g. `admin`, `staff`, `sales`, or `member`.
+
+
+
+
+
+## Development Environment
 
 Laravel 11 requires PHP 8.2.0 or later.
 I use postgresql for the database, but any DB that supports jsonb data should work.
 
-I'll add Docker compose examples later, in the meantime here is how to build manually on Debian 12:
+Easiest way is to use docker to deploy as above. But if you want to build manually, this should get you up and running.
+
+I'm assuming you start with a clean build of Debian 12 (bookworm).
+
 
 ### DB
 ```apt install postgresql```

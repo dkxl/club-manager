@@ -8,7 +8,8 @@
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <x-favicon/>
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    <link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/ocean.css" rel="stylesheet">
 </head>
 <body>
     <div id="app">
