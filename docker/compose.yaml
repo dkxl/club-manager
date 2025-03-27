@@ -1,7 +1,5 @@
 ---
 # docker-compose for Laravel 11, PHP 8.2, NGINX, Postgresql 17
-# Documentation here:
-# https://github.com/docker-library/docs/blob/master/postgres/README.md
 
 services:
   nginx:
@@ -42,6 +40,7 @@ services:
       DB_NAME: appt
       DB_USER: appt_admin
       DB_PASSWORD: change_me
+      # change this to the public hostname for your site
       APP_URL: "https://cms1.lan.dkxl.biz"
 
   db:
