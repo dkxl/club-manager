@@ -12,15 +12,15 @@ class DatabaseSeeder extends Seeder
 
 
     /**
-     * Seed the application's database.
+     * Seed the application's database with some default data for testing.
      */
     public function run(): void
     {
 
         $this->call([
-            UserSeeder::class,
             AdminSeeder::class,
             VenueSeeder::class,
+            UserSeeder::class,
             InstructorSeeder::class,
             MemberSeeder::class,
             MembershipPlanSeeder::class,
